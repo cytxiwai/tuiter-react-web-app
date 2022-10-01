@@ -1,0 +1,45 @@
+body {
+    font-family: "Arial";
+    background-color: black;
+}
+
+.wd-pg-top-container {
+    margin-left: 45px;
+    margin-top: 0px;
+    margin-right: 12px;
+    border-left: solid 1px rgb(47, 51, 54);
+    border-bottom: solid 1px rgb(47, 51, 54);
+    border-right: solid 1px rgb(47, 51, 54);
+    height: auto;
+    width: 95%;
+    display: flex;
+}
+
+.wd-pg-title {
+    padding-left: 16px;
+    padding-top: 12px;
+    width: 96%;
+    height:55px;
+}
+
+.wd-pg-title > h3 {
+    font-size:13px;
+    color: lightgray;
+}
+
+.wd-pg-title > h1 {
+    font-size:20px;
+    color: white;
+    line-height: 0px;
+}
+
+.wd-pg-options {
+    padding-top: 12px;
+    padding-right: 12px;
+    height: 55px;
+    width: auto;
+}
+
+.wd-pg-options .wd-options-img {
+    font-size: 30px;
+}
