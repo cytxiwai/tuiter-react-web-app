@@ -3,116 +3,138 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link href="index.css" rel="stylesheet">
+
+    <!--always insert vendor's library first-->
+    <link href="../../vendors/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../vendors/fontawesome/css/all.css" rel="stylesheet"/>
+    <!--<link href="index.css" rel="stylesheet">-->
 </head>
 <body>
-    <div>
+    <div class="container pt-2">
         <!--Search Bar on the top of explore page-->
-        <div class="wd-top-nav">
-            <div class="wd-picContainer">
-                <img src="https://cdn.icon-icons.com/icons2/2551/PNG/512/search_icon_152764.png" class="wd-searchPic">
+        <div class="row">
+            <!--Navigation links-->
+            <div class="col-12 col-lg-2 col-xl-2">
+                <div class="list-group">
+                    <a href="https://en.wikipedia.org/wiki/Dune_(novel)" class="list-group-item list-group-item-action active">
+                        Dune</a>
+                    <a href="https://en.wikipedia.org/wiki/The_Lord_of_the_Rings" class="list-group-item list-group-item-action">
+                        Lord of the Rings</a>
+                    <a href="https://en.wikipedia.org/wiki/The_Forever_War" class="list-group-item list-group-item-action">
+                        The Forever War</a>
+                    <a href="https://en.wikipedia.org/wiki/2001:_A_Space_Odyssey_(novel)" class="list-group-item list-group-item-action">
+                        2001 A Space Odyssey</a>
+                    <a href="https://en.wikipedia.org/wiki/Ender%27s_Game" class="list-group-item list-group-item-action disabled" tabindex="-1" aria-disabled="true">Ender's Game</a>
+                </div>
+                <button class="btn btn-primary w-100 mt-1 rounded-pill" type="button" >tuit</button>
             </div>
-            <div class="wd-textContainer">
-                <input placeholder="Search Tuiter" class="textBox" type="text"/>
+
+
+            <!--Main content-->
+            <div class="col-12 col-lg-7 col-xl-7">
+
+                <!--search bar-->
+                <div>
+                    <i class="fa fa-search"></i>
+                    <input class="form-control rounded-pill" placeholder="Search Tuiter">
+
+                </div>
+
+                <!--Navigation Tabs section-->
+                <ul class="nav nav-tabs mt-2">
+                    <li class="nav-item"><a class="nav-link active" href="for-you.html">For you</a></li>
+                    <li class="nav-item"><a class="nav-link" href="trending.html">Trending</a></li>
+                    <li class="nav-item"><a class="nav-link" href="news.html">News</a></li>
+                    <li class="nav-item"><a class="nav-link" href="sports.html">Sports</a></li>
+                    <li class="nav-item"><a class="nav-link" href="entertainment.html">Entertainment</a></li>
+                </ul>
+
+                <!--main image-->
+                <div class="position-relative">
+                    <img src="../../images/starship.jpeg" class="w-100">
+                    <h1 class="position-absolute bottom-0 left-0 text-white">SpaceX's Starship</h1>
+                </div>
+
+
+                <!--list elements of main page-->
+                <ul class="list-group">
+
+                    <!--first element of list-->
+                    <li class="list-group-item">
+                        <div class="row">
+                            <div class="col-8">
+                                <div>Web Development</div>
+                                <div class="fw-bolder">ReactJS - 2h</div>
+                                <div class="fw-bolder">React.js is a component based front end library that makes it
+                                    very easy to build Single Page Applications or SPAs</div>
+                            </div>
+                            <div class="col-4">
+                                <img src="../../images/react-logo.png" class="float-end" height="100px" width="100px"/>
+                            </div>
+                        </div>
+                    </li>
+
+                    <!--second element of list-->
+                    <li class="list-group-item">
+                        <div class="row">
+                            <div class="col-8">
+                                <div class="fw-bolder">JavaScript - 2h</div>
+                                <div class="fw-bolder">JavaScript is programming language that can run on browsers
+                                as well as desktops</div>
+                                <div>123K Tweets</div>
+                            </div>
+                            <div class="col-4">
+                                <img src="../../images/javascript-logo.png" class="float-end" height="100px" width="100px"/>
+                            </div>
+                        </div>
+                    </li>
+
+                    <!--third element of list-->
+                    <li class="list-group-item">
+                        <div class="row">
+                            <div class="col-8">
+                                <div>Web Development</div>
+                                <div class="fw-bolder">jQuery</div>
+                                <div>123K Tweets</div>
+                            </div>
+                            <div class="col-4">
+                                <img src="../../images/jquery-logo.png" class="float-end" height="100px" width="100px"/>
+                            </div>
+                        </div>
+                    </li>
+
+                    <!--fourth element of list-->
+                    <li class="list-group-item">
+                        <div class="row">
+                            <div class="col-8">
+                                <div>Web Development</div>
+                                <div class="fw-bolder">NodeJS - 2h</div>
+                                <div>123K Tweets</div>
+                            </div>
+                            <div class="col-4">
+                                <img src="../../images/nodejs-logo.png" class="float-end" height="100px" width="100px"/>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
             </div>
-            <div class="wd-gear-box">
-                <a href="explore-settings.html" style="text-decoration: none;"><span class="wd-gear-img"
-                style="color:rgb(29,161,242)">&#9881</span></a>
-            </div>
+
+
+
+            <!--Who to follow-->
+            <div class="col-12 col-lg-3 col-xl-3">Who to follow</div>
+
+
+
+
+
+
+
+
         </div>
 
 
-        <!--Navigation Tabs section-->
-        <ul class="wd-nav-tabs">
-            <li class="wd-selected"><a href="for-you.html">For you</a></li>
-            <li><a href="trending.html">Trending</a></li>
-            <li><a href="covid19.html">COVID-19</a></li>
-            <li><a href="news.html">News</a></li>
-            <li><a href="sports.html">Sports</a></li>
-            <li class="last-nav-tab"><a href="entertainment.html">Entertainment</a></li>
-        </ul>
-
-
-        <!--suggested posts section with tweets#-->
-        <div class="wd-twi-sec">
-
-            <!--first post under tweets section-->
-            <div class="wd-twi-container">
-                <h3>Movies Trending</h3>
-                <h1><a href="https://twitter.com/search?q=%22Hocus%20Pocus%202%22&src=trend_click&vertical=trends">Hocus Pocus 2</a></h1>
-                <h3>38.5K Tweets</h3>
-            </div>
-
-            <!--second post under tweets section-->
-            <div class="wd-twi-container">
-                <h3>Trending</h3>
-                <h1><a href="https://twitter.com/search?q=%23CashAppinWild&src=trend_click&vertical=trends">#CashAppinWild</a></h1>
-                <h3>8,130 Tweets</h3>
-            </div>
-        </div>
-
-
-        <!--suggested post section with author name-->
-        <div class="wd-author-sec">
-
-            <!--first post under author section-->
-            <div class="wd-author-container">
-                <div class="wd-author-box">
-                    <h3>KQED News · 10h</h3>
-                    <h1><a href="https://twitter.com/i/events/1575888235414159364">California's COVID sick pay policy has
-                        been extended through December 31st</a></h1>
-                </div>
-                <div class="wd-author-img-box">
-                    <img class="post-img" src="https://pbs.twimg.com/media/Fd6v0UVUAAEPQcb?format=jpg&name=medium" alter
-                         draggable="true" height="100px" width="100px" style="border-radius: 18px;">
-                </div>
-            </div>
-
-            <!--second post under author section-->
-            <div class="wd-author-container">
-                <div class="wd-author-box">
-                    <h3>Bloomberg · 8h</h3>
-                    <h1><a href="https://twitter.com/i/events/1575916606252892189">Biden says Nord Stream
-                        leak was a "deliberate act of sabotage"</a></h1>
-                </div>
-                <div class="wd-author-img-box">
-                    <img class="post-img" src="https://pbs.twimg.com/media/Fd7HrT3XwCYXybN?format=jpg&name=medium" alter
-                         draggable="true" height="100px" width="100px" style="border-radius: 18px;">
-                </div>
-            </div>
-        </div>
-
-        <!--suggested post section with topic name only-->
-        <div class="wd-topic-sec">
-
-            <!--first post under topic section-->
-            <div class="wd-topic-container">
-                <div class="wd-topic-box">
-                    <h3>War in Ukraine · LIVE</h3>
-                    <h1><a href="https://twitter.com/i/events/1483255084750282753">Putin claims annexation of four
-                        Ukrainian territories in Kremlin ceremony</a></h1>
-                </div>
-                <div class="wd-topic-img-box">
-                    <img class="post-img" src="https://pbs.twimg.com/semantic_core_img/1575659924603953153/dPGKmbrm?format=jpg&name=medium" alter
-                         draggable="true" height="100px" width="100px" style="border-radius: 18px;">
-                </div>
-            </div>
-
-            <!--second post under topic section-->
-            <div class="wd-topic-container">
-                <div class="wd-topic-box">
-                    <h3>US elections · LIVE</h3>
-                    <h1><a href="https://twitter.com/i/events/1519021904165695488">California: Election news
-                        and updates</a></h1>
-                </div>
-                <div class="wd-topic-img-box">
-                    <img class="post-img" src="https://pbs.twimg.com/semantic_core_img/1565027294804029440/5f8OrQnH?format=jpg&name=medium" alter
-                         draggable="true" height="100px" width="100px" style="border-radius: 18px;">
-                </div>
-            </div>
-        </div>
     </div>
-
 
 
 </body>
