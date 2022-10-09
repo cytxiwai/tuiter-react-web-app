@@ -7,112 +7,132 @@
     <!--always insert vendor's library first-->
     <link href="../../vendors/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="../../vendors/fontawesome/css/all.css" rel="stylesheet"/>
-    <!--<link href="index.css" rel="stylesheet">-->
+    <link href="index.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
 </head>
 <body>
     <div class="container pt-2">
         <!--Search Bar on the top of explore page-->
         <div class="row">
             <!--Navigation links-->
-            <div class="col-12 col-lg-2 col-xl-2">
+            <div class="col-auto col-xl-2 col-xxl-2">
                 <div class="list-group">
-                    <a href="https://en.wikipedia.org/wiki/Dune_(novel)" class="list-group-item list-group-item-action active">
-                        Dune</a>
-                    <a href="https://en.wikipedia.org/wiki/The_Lord_of_the_Rings" class="list-group-item list-group-item-action">
-                        Lord of the Rings</a>
-                    <a href="https://en.wikipedia.org/wiki/The_Forever_War" class="list-group-item list-group-item-action">
-                        The Forever War</a>
-                    <a href="https://en.wikipedia.org/wiki/2001:_A_Space_Odyssey_(novel)" class="list-group-item list-group-item-action">
-                        2001 A Space Odyssey</a>
-                    <a href="https://en.wikipedia.org/wiki/Ender%27s_Game" class="list-group-item list-group-item-action disabled" tabindex="-1" aria-disabled="true">Ender's Game</a>
+                    <a href="../tuit.html" class="list-group-item list-group-item-action d-flex flex-row list-color">
+                        <i class="fab fa-twitter d-flex justify-content-start align-items-center me-2"></i></a>
+                    <a href="../home.html" class="list-group-item list-group-item-action d-flex flex-row list-color">
+                        <i class="fas fa-home d-flex justify-content-start align-items-center me-2"></i>
+                        <p class="d-none d-xl-block d-flex m-0">Home</p></a>
+                    <a href="index.html" class="list-group-item list-group-item-action d-flex flex-row wd-list-color-6">
+                        <i class="fas fa-hashtag d-flex justify-content-start align-items-center me-2"></i>
+                        <p class="d-none d-xl-block d-flex m-0 fw-bold">Explore</p></a>
+                    <a href="../notifications.html" class="list-group-item list-group-item-action d-flex flex-row list-color">
+                        <i class="fas fa-bell d-flex justify-content-start align-items-center me-2"></i>
+                        <p class="d-none d-xl-block d-flex m-0">Notification</p></a>
+                    <a href="../messages.html" class="list-group-item list-group-item-action d-flex flex-row list-color">
+                        <i class="fas fa-envelope d-flex justify-content-start align-items-center me-2"></i>
+                        <p class="d-none d-xl-block d-flex m-0">Messages</p></a>
+                    <a href="../bookmarks/index.html" class="list-group-item list-group-item-action d-flex flex-row list-color">
+                        <i class="fas fa-bookmark d-flex justify-content-start align-items-center me-2 ps-1"></i>
+                        <p class="d-none d-xl-block d-flex m-0">Bookmarks</p></a>
+                    <a href="../lists.html" class="list-group-item list-group-item-action d-flex flex-row list-color">
+                        <i class="fas fa-list-ul d-flex justify-content-start align-items-center me-2 ps-1"></i>
+                        <p class="d-none d-xl-block d-flex m-0">Lists</p></a>
+                    <a href="../profile.html" class="list-group-item list-group-item-action d-flex flex-row list-color">
+                        <i class="fas fa-user d-flex justify-content-start align-items-center me-2 ps-1"></i>
+                        <p class="d-none d-xl-block d-flex m-0">Profile</p></a>
+                    <a href="../navigation.html" class="list-group-item list-group-item-action d-flex flex-row list-color">
+                        <i class="fas fa-ellipsis-h d-flex justify-content-start align-items-center me-2 ps-1"></i>
+                        <p class="d-none d-xl-block d-flex m-0">More</p></a>
                 </div>
-                <button class="btn btn-primary w-100 mt-1 rounded-pill" type="button" >tuit</button>
+                <button class="btn btn-primary w-100 mt-3 rounded-pill" type="button" >tuit</button>
             </div>
 
 
             <!--Main content-->
-            <div class="col-12 col-lg-7 col-xl-7">
-
+            <div class="col-9 col-sm-10 col-md-10 col-lg-6 col-xl-6 col-xxl-6">
                 <!--search bar-->
-                <div>
-                    <i class="fa fa-search"></i>
-                    <input class="form-control rounded-pill" placeholder="Search Tuiter">
-
+                <div class="row w-100 ms-1 pe-1 border-1 d-flex">
+                    <div class="col-11">
+                        <div class="position-relative">
+                            <input class="ps-5 form-control rounded-pill wd-search-bg" placeholder="Search Tuiter" type="text">
+                            <span><i class="fas fa-search position-absolute wd-search-tuiter"></i></span>
+                        </div>
+                    </div>
+                    <div class="col-1">
+                    <span class="wd-font-color-2 d_inline_block"><i class="fas fa-cog fs-3
+                    pt-1 pb-1  d-flex justify-content-end align-items-center"></i></span>
+                    </div>
                 </div>
 
                 <!--Navigation Tabs section-->
-                <ul class="nav nav-tabs mt-2">
-                    <li class="nav-item"><a class="nav-link active" href="for-you.html">For you</a></li>
-                    <li class="nav-item"><a class="nav-link" href="trending.html">Trending</a></li>
-                    <li class="nav-item"><a class="nav-link" href="news.html">News</a></li>
-                    <li class="nav-item"><a class="nav-link" href="sports.html">Sports</a></li>
-                    <li class="nav-item"><a class="nav-link" href="entertainment.html">Entertainment</a></li>
+                <ul class=" nav nav-tabs mt-2 pb-2 border-2 w-100">
+                    <li class="nav-item me-4 border-4"><a class="nav-link wd-list-color-5" href="for-you.html">For you</a></li>
+                    <li class="nav-item ms-3 me-4"><a class="nav-link wd-list-color-4" href="trending.html">Trending</a></li>
+                    <li class="nav-item ms-3 me-3"><a class="nav-link wd-list-color-4" href="news.html">News</a></li>
+                    <li class="nav-item ms-3 me-3"><a class="nav-link wd-list-color-4" href="sports.html">Sports</a></li>
+                    <li class="nav-item ms-3"><a class="nav-link wd-list-color-4" href="entertainment.html">Entertainment</a></li>
                 </ul>
 
                 <!--main image-->
-                <div class="position-relative">
+                <div class="position-relative border-3">
                     <img src="../../images/starship.jpeg" class="w-100">
                     <h1 class="position-absolute bottom-0 left-0 text-white">SpaceX's Starship</h1>
                 </div>
 
-
                 <!--list elements of main page-->
-                <ul class="list-group">
-
+                <ul class="list-group border-2">
                     <!--first element of list-->
-                    <li class="list-group-item">
+                    <li class="list-group-item list-color-3">
                         <div class="row">
                             <div class="col-8">
-                                <div>Web Development</div>
-                                <div class="fw-bolder">ReactJS - 2h</div>
+                                <div class="wd-font-color">Web Development</div>
+                                <div class="fw-bolder">ReactJS <span class="wd-font-color">- 2h</span></div>
                                 <div class="fw-bolder">React.js is a component based front end library that makes it
                                     very easy to build Single Page Applications or SPAs</div>
                             </div>
                             <div class="col-4">
-                                <img src="../../images/react-logo.png" class="float-end" height="100px" width="100px"/>
+                                <img src="../../images/react-logo.png" class="float-end rounded" height="100px" width="100px"/>
                             </div>
                         </div>
                     </li>
-
                     <!--second element of list-->
-                    <li class="list-group-item">
+                    <li class="list-group-item list-color-3">
                         <div class="row">
                             <div class="col-8">
-                                <div class="fw-bolder">JavaScript - 2h</div>
+                                <div class="fw-bolder">JavaScript <span class="wd-font-color">- 2h</span></div>
                                 <div class="fw-bolder">JavaScript is programming language that can run on browsers
                                 as well as desktops</div>
-                                <div>123K Tweets</div>
+                                <div class="wd-font-color">123K Tweets</div>
                             </div>
                             <div class="col-4">
-                                <img src="../../images/javascript-logo.png" class="float-end" height="100px" width="100px"/>
+                                <img src="../../images/javascript-logo.png" class="float-end rounded" height="100px" width="100px"/>
                             </div>
                         </div>
                     </li>
-
                     <!--third element of list-->
-                    <li class="list-group-item">
+                    <li class="list-group-item list-color-3">
                         <div class="row">
                             <div class="col-8">
-                                <div>Web Development</div>
+                                <div class="wd-font-color">Web Development</div>
                                 <div class="fw-bolder">jQuery</div>
-                                <div>123K Tweets</div>
+                                <div class="wd-font-color">123K Tweets</div>
                             </div>
                             <div class="col-4">
-                                <img src="../../images/jquery-logo.png" class="float-end" height="100px" width="100px"/>
+                                <img src="../../images/jquery-logo.png" class="float-end rounded" height="100px" width="100px"/>
                             </div>
                         </div>
                     </li>
-
                     <!--fourth element of list-->
-                    <li class="list-group-item">
+                    <li class="list-group-item list-color-3">
                         <div class="row">
                             <div class="col-8">
-                                <div>Web Development</div>
-                                <div class="fw-bolder">NodeJS - 2h</div>
-                                <div>123K Tweets</div>
+                                <div class="wd-font-color">Web Development</div>
+                                <div class="fw-bolder">NodeJS <span class="wd-font-color">- 2h</span></div>
+                                <div class="wd-font-color">123K Tweets</div>
                             </div>
                             <div class="col-4">
-                                <img src="../../images/nodejs-logo.png" class="float-end" height="100px" width="100px"/>
+                                <img src="../../images/nodejs-logo.png" class="float-end rounded" height="100px" width="100px"/>
                             </div>
                         </div>
                     </li>
@@ -122,15 +142,79 @@
 
 
             <!--Who to follow-->
-            <div class="col-12 col-lg-3 col-xl-3">Who to follow</div>
+            <div class="col-auto col-lg-4 col-xl-4 col-xxl-4">
+                <ul class="list-group d-none d-lg-block">
+                    <li class="list-group-item fw-bold list-color-2"><h5 class="fw-bold">Who to follow</h5></li>
+                    <li class="list-group-item list-color-2">
+                        <div class="row">
+                            <div class="col-2 d-flex align-items-center">
+                                <img src="../../images/java-logo.png" height="40px" width="40px"
+                                                    class="float-start rounded"></div>
+                            <div class="col-8">
+                                <h5 class="fw-bold mb-0 mt-2 ms-1 wd-font-size">Java</h5>
+                                <h6 class="ms-1 wd-font-color wd-font-size-2">@Java</h6>
+                            </div>
+                            <div class="col-2 d-flex justify-content-end align-items-center">
+                                <button class="btn btn-primary rounded-pill wd-btn-1" type="button">Follow</button>
+                            </div>
+                        </div>
+                    </li>
 
-
-
-
-
-
-
-
+                    <li class="list-group-item list-color-2">
+                        <div class="row">
+                            <div class="col-2 d-flex align-items-center"><img src="../../images/relativityspace-logo.png"
+                                                    class="float-start rounded" height="40px" width="40px"></div>
+                            <div class="col-8">
+                                <h5 class="fw-bold mb-0 mt-2 ms-1 wd-font-size">Relativity Space</h5>
+                                <h6 class="ms-1 wd-font-color wd-font-size-2">@relativityspace</h6>
+                            </div>
+                            <div class="col-2 d-flex justify-content-end align-items-center">
+                                <button class="btn btn-primary rounded-pill wd-btn-1" type="button">Follow</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item list-color-2">
+                        <div class="row">
+                            <div class="col-2 d-flex align-items-center">
+                                <img src="../../images/virgingalactic-logo.png" height="40px" width="40px"
+                                                    class="float-start rounded"></div>
+                            <div class="col-8">
+                                <h5 class="fw-bold mb-0 mt-2 ms-1 wd-font-size">Virgin Galactic</h5>
+                                <h6 class="ms-1 wd-font-color wd-font-size-2">@virgingalactic</h6>
+                            </div>
+                            <div class="col-2 d-flex justify-content-end align-items-center">
+                                <button class="btn btn-primary rounded-pill wd-btn-1" type="button">Follow</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item list-color-2">
+                        <div class="row">
+                            <div class="col-2 d-flex align-items-center"><img src="../../images/nasa-logo.png" height="40px" width="40px"
+                                                    class="float-start rounded"></div>
+                            <div class="col-8">
+                                <h5 class="fw-bold mb-0 mt-2 ms-1 wd-font-size">NASA</h5>
+                                <h6 class="ms-1 wd-font-color wd-font-size-2">@NASA</h6>
+                            </div>
+                            <div class="col-2 d-flex justify-content-end align-items-center">
+                                <button class="btn btn-primary rounded-pill wd-btn-1" type="button">Follow</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item list-color-2">
+                        <div class="row">
+                            <div class="col-2 d-flex align-items-center"><img src="../../images/tesla-logo.png" height="40px" width="40px"
+                                                    class="float-start rounded"></div>
+                            <div class="col-8">
+                                <h5 class="fw-bold mb-0 mt-2 ms-1 wd-font-size">Tesla</h5>
+                                <h6 class="ms-1 wd-font-color wd-font-size-2">@Tesla</h6>
+                            </div>
+                            <div class="col-2 d-flex justify-content-end align-items-center">
+                                <button class="btn btn-primary rounded-pill wd-btn-1 " type="button">Follow</button>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
         </div>
 
 
