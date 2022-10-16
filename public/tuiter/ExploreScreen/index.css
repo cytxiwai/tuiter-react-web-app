@@ -1,8 +1,4 @@
-body {
-    font-family: "Arial";
-    background-color: black;
-    color: lightgray;
-}
+
 
 
 .wd-font-color{
@@ -14,7 +10,7 @@ body {
 }
 
 .wd-font-size{
-    font-size: 15px;
+    font-size: 14px;
 }
 
 .wd-font-size-2{
@@ -32,10 +28,6 @@ body {
     left: 15px;
 }
 
-.list-color{
-    background-color: black;
-    color: lightgray;
-}
 
 .list-color-2{
     background-color: #212121;
@@ -70,31 +62,11 @@ body {
     border-bottom: solid 4px #00B0FF;
 }
 
-
-.wd-btn-1{
-    background-color: lightgray;
-    color: #212121
 }
 
 #display{
     display: flex;
 }
 
-.border-1 {
-    border-left: solid 2px #212121;
-    border-right: solid 2px #212121;
-}
 
-.border-2 {
-    border-right: solid 2px #212121;
-    border-bottom: solid 2px #212121;
-    border-left: solid 2px #212121;
-    }
 
-.border-3 {
-    border-right: solid 2px #212121;
-    border-bottom: solid 2px #212121;
-    border-left: solid 2px #212121;
-    border-top: solid 2px #212121;
-    }
-}
