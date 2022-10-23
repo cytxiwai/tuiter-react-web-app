@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+
 import Tuiter from './tuiter/index.js';
 import Labs from './labs/index.js';
 import HelloWorld from "./labs/a6/hello-world";
@@ -24,7 +24,7 @@ function App() {
         <Routes>
             <Route index element={<Labs/>}/>
             <Route path="/hello" element={<HelloWorld/>}/>
-            <Route path="/tuiter" element={<Tuiter/>}/>
+            <Route path="/tuiter/*" element={<Tuiter/>}/>
         </Routes>
     </div>
     </BrowserRouter>
