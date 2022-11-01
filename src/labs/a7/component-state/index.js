@@ -1,4 +1,6 @@
 import {useState} from 'react';
+import Counter from './counter';
+import Email from './email'
 
 const ComponentState = () => {
     const [count, setCount] = useState(123);
@@ -7,7 +9,7 @@ const ComponentState = () => {
     const [bio, setBio] = useState('blablabla');
     const [showBio, setShowBio] = useState(true);
     const [profile, setProfile] = useState({
-    firstNmae: 'Alice', lastName:'Wondrland',
+    firstName: 'Alice', lastName:'Wondrland',
     username: 'alice123', password:'P@ssw0rd'})
 
 
@@ -38,6 +40,22 @@ const ComponentState = () => {
        lastName: newLastName,}
        setProfile(newProfile)}
 
+    /*
+    const setUserName = (e) => {
+           const newUserName = e.target.value;
+           const newProfile = {
+           ...profile,
+           username: newUserName,}
+           setProfile(newProfile)}
+
+
+    const setPassword = (e) => {
+               const newPassword = e.target.value;
+               const newProfile = {
+               ...profile,
+               password: newPassword,}
+               setProfile(newProfile)}
+*/
 
     return (
         <>
@@ -52,8 +70,15 @@ const ComponentState = () => {
             Last Name: <input
             onChange={setLastName}
             value={profile.lastName}/><br/>
-            Username: <input value={profile.username}/><br/>
-            Password: <input value={profile.password} type="password"/><br/>
+
+            Username: <input
+            onChange={(e) => setProfile({...profile, username: e.target.value})}
+            value={profile.username}/><br/>
+
+
+            Password: <input
+            onChange={(e) => setProfile({...profile, password: e.target.value})}
+            value={profile.password} type="password"/><br/>
             <pre>
                 {JSON.stringify(profile, null, 2)}
             </pre>
@@ -72,25 +97,13 @@ const ComponentState = () => {
                         (e) => setBio(e.target.value)
                      }>
                 </textarea>
-                </>            }
+                </>
+            }
 
 
-            <h4>Email</h4>
-             <input type="checkbox"
-                    onChange={(e) =>setEditingEmail(e.target.checked)}
-                    checked={editingEmail}/>
-                    {
-                    editingEmail && <input value={email} onChange={changeEmail}/>
-                    }
-                    {
-                    !editingEmail && <span>{email}</span>
-                    }
+            <Email editingEmail={editingEmail} email={email} setEditingEmail={setEditingEmail} changeEmail={changeEmail}/>
 
-            <h4>Counter</h4>
-            count = {count}
-            <button onClick={up}>Up</button>
-            <button onClick={down}>Down</button>
-            <h1> Email = {email}</h1>
+            <Counter count={count} email={email} up={up} down={down}/>
 
         </>
     )
