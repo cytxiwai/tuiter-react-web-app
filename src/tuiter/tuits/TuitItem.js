@@ -1,0 +1,39 @@
+import React from 'react';
+import TuitStates from "./TuitStates.js"
+
+const TuitItem = (
+    {
+        tuit = {
+            "_id": 234,
+            "topic": "Space",
+            "userName": "SpaceX",
+            "time": "2h",
+            "title": "100s of SpaceX Starships land on Mars after a 6 month journey. 1000s of Martian colonists being building Mars Base 1",
+            "image": "spacex.png",
+            "liked": true,
+            "replies": 123,
+            "retuits": 432,
+            "likes": 2345,
+            "handle": "@spacex",
+            "tuit": "You want to wake up in the morning and think the future is going to be great - and that’s what being a spacefaring civilization is all about. It’s about believing in the future and thinking that the future will be better than the past. And I can’t think of anything more exciting than going out there and being among the stars"
+
+        }
+    }
+) => {
+    return (
+                     <li className="list-group-item d-flex flex-row position-relatively">
+                              <div className="d-flex float-start me-2 mt-3">
+                                  <img alt="" width="40px" height="40px" className="rounded-circle" src={`/images/${tuit.image}`}/>
+                               </div>
+                              <div className="ms-2 d-flex flex-column mt-3">
+                                  <div className="d-flex flex-row">
+                                  <div className="fw-bold">{tuit.userName} <span className="fw-normal text-secondary">{tuit.handler} • {tuit.time}</span></div>
+                                  </div>
+                                  <div>{tuit.tuit} </div>
+                                   <TuitStates/>
+                          </div>
+                      </li>
+    );
+};
+
+export default TuitItem;

@@ -18,6 +18,25 @@ const initialTodos = [
  {
  name: 'todos',
  initialState: initialTodos,
- });
+ reducers:{
+    addTodo(state, action){
+        state.push({
+        id: (new Date()).getTime(),
+        do: action.payload.do,
+        done: false
+        });
+    },
 
- export default todosSlice.reducer
+    deleteTodo(state, action){
+        const index = action.payload
+        state.splice(index, 1)
+    },
+
+    todoDoneToggle(state, action){
+        const todo = state.find((todo) => todo.id === action.payload.id)
+        todo.done = !todo.done
+    }
+ }
+ });
+export const {addTodo, deleteTodo, todoDoneToggle} = todosSlice.actions
+export default todosSlice.reducer
