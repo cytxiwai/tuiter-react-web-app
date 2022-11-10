@@ -12,7 +12,7 @@ const profile = useSelector(state => state.profile)
     const [location, setLocation] = useState('San Jose, CA');
     const [website, setWebsite] = useState('www.123.com');
     const [bday, setBDay] = useState('11/11/1111');
-    const [editing, setEditing] = useState(true)
+    //const [editing, setEditing] = useState(true)
 
 
 
