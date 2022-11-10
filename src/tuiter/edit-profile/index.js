@@ -12,6 +12,7 @@ const profile = useSelector(state => state.profile)
     const [location, setLocation] = useState('San Jose, CA');
     const [website, setWebsite] = useState('www.123.com');
     const [bday, setBDay] = useState('11/11/1111');
+    const [editing, setEditing] = useState(true)
 
 
 
@@ -27,10 +28,14 @@ const profile = useSelector(state => state.profile)
         {profile.map((profile) =>
                 <div>
                     <div>
-                        <button type="button" className="float-start btn btn-white pb-1">
+                        <button
+                            onclick={() => setEditing(false)}
+                            type="button" className="float-start btn btn-white pb-1">
                             <Link to="../profile/" className="text-decoration-none text-dark"><FaTimes/></Link></button>
                         <div className="float-start pt-2 mb-0"> Edit profile</div>
-                        <button className="float-end me-2 mb-1 btn btn-white btn-outline-dark rounded-pill">
+                        <button
+                            onclick={() => setEditing(true)}
+                            className="float-end me-2 mb-1 btn btn-white btn-outline-dark rounded-pill">
                              <Link to="../profile/" className="text-decoration-none text-dark">Save</Link>
                         </button>
                     </div>
@@ -42,50 +47,50 @@ const profile = useSelector(state => state.profile)
                     </div>
 
                     <form className="mt-5 pt-4" onSubmit={handleSubmit}>
-                        <label for="firstName"> First Name </label>
-                        <input
-                            id="firstName"
-                            type="text"
-                            className="me-2"
-                            onChange={
-                                (e) => setFirstName(e.target.value)
-                                }
-                            value={firstName}/>
-
-                        <label for="lastName"> Last Name </label>
-                        <input
-                            id="lastName"
-                            type="text"
-                            onChange={
-                                (e) => setLastName(e.target.value)
-                                }
-                            value={lastName}
-                            />
-
-
-
-                        <label for="bio"> Bio </label>
-                        <textarea
-                                 id='bio'
-                                className="mt-3"
-                                value={bio}
+                       <ul className="list-group">
+                        <li className="list-group-item">
+                            <label for="firstName" className="me-2"> First Name </label>
+                            <input
+                                id="firstName"
+                                type="text"
+                                className="me-2"
                                 onChange={
-                                (e) => setBio(e.target.value)
-                                }>
-                        </textarea>
-
-                        <br/>
-
-                        <label for="Location"> Location </label>
+                                    (e) => setFirstName(e.target.value)
+                                    }
+                                value={firstName}/>
+                        </li>
+                        <li className="list-group-item">
+                            <label for="lastName"className="me-2"> Last Name </label>
+                            <input
+                                id="lastName"
+                                type="text"
+                                onChange={
+                                    (e) => setLastName(e.target.value)
+                                    }
+                                value={lastName}
+                                />
+                        </li>
+                        <li className="list-group-item">
+                            <label for="bio" className="me-2"> Bio </label>
+                            <textarea
+                                     id='bio'
+                                    className="mt-3"
+                                    value={bio}
+                                    onChange={
+                                    (e) => setBio(e.target.value)
+                                    }>
+                            </textarea>
+                        </li>
+                        <li className="list-group-item">
+                        <label for="Location" className="me-2"> Location </label>
                         <input
                             className="mt-2"
                             onChange={
                                  (e) => setLocation(e.target.value)}
                             value={location} />
-
-                        <br/>
-
-                        <label for="website"> Website </label>
+                        </li>
+                        <li className="list-group-item">
+                        <label for="website" className="me-2"> Website </label>
                         <input
                             id="website"
                             className="mt-2"
@@ -93,20 +98,19 @@ const profile = useSelector(state => state.profile)
                                   (e) => setWebsite(e.target.value)
                                   }
                             value={website} />
-
-                        <br/>
-
-                        <label for="bday"> Date of Birth </label>
-                        <input
-                        className="mt-2"
-                            onChange={
-                                (e) => setBDay(e.target.value)
-                                }
-                            value={bday}
-                            />
-
+                        </li>
+                        <li className="list-group-item">
+                            <label for="bday" className="me-2"> Date of Birth </label>
+                            <input
+                            className="mt-2"
+                                onChange={
+                                    (e) => setBDay(e.target.value)
+                                    }
+                                value={bday}
+                                />
+                        </li>
+                       </ul>
                     </form>
-
                     </div>
 
                 )
