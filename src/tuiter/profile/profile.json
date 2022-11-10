@@ -1,0 +1,18 @@
+[
+  {
+    "firstName":"Teena",
+    "lastName":"C",
+    "handle":"@teenac",
+    "profilePicture":"../images/img.png",
+    "bannerPicture":"../images/pink.png",
+    "bio": "MSCS student at NEU with an accounting job at a government-based mental health care center, has an Esty store selling wedding supplies ",
+  "website": "www.123.com",
+  "location": "San Jose, CA",
+  "dateOfBirth": "11/11/1111",
+    "tweets": 800,
+  "dateJoined": "4/2009",
+  "followingCount": 340,
+  "followersCount": 223
+}
+]
+

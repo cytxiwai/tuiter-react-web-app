@@ -17,7 +17,7 @@ const NavigationSidebar = () => {
      <Link className={`list-group-item d-flex flex-row ${active === 'messages'?'active':''}`}><FaEnvelope className="mt-1 me-2"/><p className="d-none d-xl-block d-flex m-0">Messages</p></Link>
      <Link className={`list-group-item d-flex flex-row ${active === 'bookmarks'?'active':''}`}><FaBookmark className="mt-1 me-2"/><p className="d-none d-xl-block d-flex m-0">Bookmarks</p></Link>
      <Link className={`list-group-item d-flex flex-row ${active === 'lists'?'active':''}`}><FaList className="mt-1 me-2"/><p className="d-none d-xl-block d-flex m-0">Lists</p></Link>
-     <Link className={`list-group-item d-flex flex-row ${active === 'profile'?'active':''}`}><FaUser className="mt-1 me-2"/><p className="d-none d-xl-block d-flex m-0">Profile</p></Link>
+     <Link to="/tuiter/profile" className={`list-group-item d-flex flex-row ${active === 'profile'?'active':''}`}><FaUser className="mt-1 me-2"/><p className="d-none d-xl-block d-flex m-0">Profile</p></Link>
      <Link className={`list-group-item d-flex flex-row ${active === 'more'?'active':''}`}><FaEllipsisH className="mt-1 me-2"/><p className="d-none d-xl-block d-flex m-0">More</p></Link>
    </div>
  );
