@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 import {useSelector} from "react-redux";
 import {FaMapMarkerAlt, FaMapPin, FaRegCalendarAlt, FaArrowLeft} from "react-icons/fa"
 import "./index.css";
@@ -13,14 +13,15 @@ const ProfileComponent = () => {
         {profileArray.map((profile) =>
                 <div>
                     <div className="flex-column mb-2">
-                        <button type="button" className="float-start btn btn-white"><FaArrowLeft/></button>
+                        <button type="button" className="float-start btn btn-white">
+                            <Link to="../home" className="text-decoration-none text-dark"><FaArrowLeft/></Link></button>
                         <div className="d-flex flex-column">
                             <div className="flex-row wd-font-currentUser"> {profile.firstName} {profile.lastName}</div>
                             <div className="flex-row  text-secondary fw-bold wd-fontLoc">{profile.tweets} Tweets</div>
                         </div>
                     </div>
                     <div className="w-100">
-                        <img src={profile.bannerPicture} alt="" className="w-100 position-relatively" height="110px" alt="Responsive image"/>
+                        <img src={profile.bannerPicture} className="w-100 position-relatively" height="110px" alt=""/>
                     </div>
                     <div>
                         <img src={profile.profilePicture} className="rounded-circle ms-5 position-absolute wd-profileimg" width="140px" alt="" />
