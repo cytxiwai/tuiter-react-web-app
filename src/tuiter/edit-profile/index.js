@@ -29,12 +29,12 @@ const profile = useSelector(state => state.profile)
                 <div>
                     <div>
                         <button
-                            onclick={() => setEditing(false)}
+
                             type="button" className="float-start btn btn-white pb-1">
                             <Link to="../profile/" className="text-decoration-none text-dark"><FaTimes/></Link></button>
                         <div className="float-start pt-2 mb-0"> Edit profile</div>
                         <button
-                            onclick={() => setEditing(true)}
+
                             className="float-end me-2 mb-1 btn btn-white btn-outline-dark rounded-pill">
                              <Link to="../profile/" className="text-decoration-none text-dark">Save</Link>
                         </button>
