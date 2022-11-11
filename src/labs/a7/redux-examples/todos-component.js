@@ -34,7 +34,7 @@ const Todos = () => {
 
             <ul className="list-group">
                 <li className="list-group-item">
-                    <button onclick={createTodoClickHandler}
+                    <button onClick={createTodoClickHandler}
                         className="btn btn-primary w-25 float-end">
                     Create
                     </button>

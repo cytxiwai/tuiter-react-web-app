@@ -6,11 +6,10 @@ import {Link} from "react-router-dom";
 
 const ProfileComponent = () => {
 
-    const profileArray = useSelector((state) => state.profile)
+    const profile = useSelector((state) => state.profile[0])
 
     return(
     <>
-        {profileArray.map((profile) =>
                 <div>
                     <div className="flex-column mb-2">
                         <button type="button" className="float-start btn btn-white">
@@ -44,9 +43,6 @@ const ProfileComponent = () => {
                         <div className="fw-bold wd-followCount flex-row">{profile.followersCount} <span className="text-secondary fw-normal">Followers</span></div>
                     </div>
                 </div>
-
-        )
-        }
 
         </>
 

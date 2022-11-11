@@ -1,42 +1,95 @@
-import {useSelector} from 'react-redux';
+import {useSelector, useDispatch} from 'react-redux';
 import {FaTimes} from "react-icons/fa"
 import {useState} from 'react';
 import {Link} from 'react-router-dom'
+import Form from 'react-bootstrap/Form'
+import {FloatingLabel, FormGroup, FormControl} from "react-bootstrap"
+import {updateProfile} from '../profile/profile-reducer.js'
 
 
-const EditProfile = () => {
-const profile = useSelector(state => state.profile)
-    const [bio, setBio] = useState('Bio');
-    const [firstName, setFirstName] = useState('Teena');
-    const [lastName, setLastName] = useState('C');
-    const [location, setLocation] = useState('San Jose, CA');
-    const [website, setWebsite] = useState('www.123.com');
-    const [bday, setBDay] = useState('11/11/1111');
-    //const [editing, setEditing] = useState(true)
+const EditProfileComponent = () => {
+    const defaultProfile = useSelector((state) => state.profile)
+    const [profile, setProfile] = useState(defaultProfile[0])
+    const [bio, setBio] = useState(profile.bio);
+    const [firstName, setFirstName] = useState(profile.firstName);
+    const [lastName, setLastName] = useState(profile.lastName);
+    const [location, setLocation] = useState(profile.location);
+    const [website, setWebsite] = useState(profile.website);
+    const [dateOfBirth] = useState(profile.dateOfBirth);
+    const dispatch = useDispatch();
+
+    const updateProfileHandler = (e) => {
+        dispatch(updateProfile(
+            {...profile,
+            fistName: firstName,
+            lastName: lastName,
+            bio: bio,
+            location: location,
+            website: website
+            }
+        ));
+    }
 
 
+    const handleBioChange =(e) => {
+        const newBio = e.target.value;
+        setBio(newBio);
+        const newProfile = {
+            ...profile,
+            bio: newBio
+        }
+        setProfile(newProfile)
+    }
 
-    const handleSubmit = (event) => {
-        //event.preventDefault();
-        //alert(inputs);
-      }
+    const handleNameChange = (e) => {
+        const newName = e.target.value.split(" ")
+        setFirstName(newName[0]);
+        setLastName(newName[1]);
+        const newProfile = {
+            ...profile,
+            firstName: firstName,
+            lastName: lastName
+        }
+        setProfile(newProfile)
+    }
+
+    const handleLocationChange = (e) => {
+        const newLocation = e.target.value;
+        setLocation(newLocation);
+        const newProfile = {
+            ...profile,
+            location: newLocation
+        }
+        setProfile(newProfile)
+    }
+
+    const handleWebsiteChange = (e) =>{
+        const newWebsite = e.target.value;
+        setWebsite(newWebsite);
+        const newProfile = {
+            ...profile,
+            website: newWebsite
+        }
+        setProfile(newProfile);
+    }
+
 
 
 
     return(
         <>
-        {profile.map((profile) =>
                 <div>
                     <div>
                         <button
-
                             type="button" className="float-start btn btn-white pb-1">
                             <Link to="../profile/" className="text-decoration-none text-dark"><FaTimes/></Link></button>
                         <div className="float-start pt-2 mb-0"> Edit profile</div>
                         <button
-
-                            className="float-end me-2 mb-1 btn btn-white btn-outline-dark rounded-pill">
-                             <Link to="../profile/" className="text-decoration-none text-dark">Save</Link>
+                            onclick={(e) => {
+                                updateProfileHandler(e);
+                            }}
+                            className="float-end me-2 mb-1 btn btn-dark text-white btn-outline-none rounded-pill">
+                             <Link to="../profile/" className="text-decoration-none">Save</Link>
                         </button>
                     </div>
                     <div className="w-100">
@@ -45,78 +98,67 @@ const profile = useSelector(state => state.profile)
                     <div>
                         <img src={profile.profilePicture} className="rounded-circle ms-5 position-absolute wd-profileimg" width="140px" alt="" />
                     </div>
+                    <div className="mt-5 pt-3">
+                        <Form className="mt-2">
 
-                    <form className="mt-5 pt-4" onSubmit={handleSubmit}>
-                       <ul className="list-group">
-                        <li className="list-group-item">
-                            <label for="firstName" className="me-2"> First Name </label>
-                            <input
-                                id="firstName"
-                                type="text"
-                                className="me-2"
-                                onChange={
-                                    (e) => setFirstName(e.target.value)
-                                    }
-                                value={firstName}/>
-                        </li>
-                        <li className="list-group-item">
-                            <label for="lastName"className="me-2"> Last Name </label>
-                            <input
-                                id="lastName"
-                                type="text"
-                                onChange={
-                                    (e) => setLastName(e.target.value)
-                                    }
-                                value={lastName}
-                                />
-                        </li>
-                        <li className="list-group-item">
-                            <label for="bio" className="me-2"> Bio </label>
-                            <textarea
-                                     id='bio'
-                                    className="mt-3"
-                                    value={bio}
+                            <FormGroup controlId="formGroupName">
+                                <FloatingLabel id="forName" label="name" className="me-2">
+                                    <FormControl
+                                        type="input"
+                                        value={firstName + " " + lastName}
+                                        onChange={
+                                            (e) => handleNameChange(e)
+                                            }/>
+                                </FloatingLabel>
+                            </FormGroup>
+
+                            <FormGroup controlId="formGroupBio">
+                                <FloatingLabel id="forBio" label="bio" className="me-2">
+                                <FormControl
+                                        type="textarea"
+                                        className="mt-2"
+                                        value={bio}
+                                        onChange={
+                                        (e) => setBio(handleBioChange(e))
+                                        }/>
+                                </FloatingLabel>
+                            </FormGroup>
+
+                            <FormGroup controlId="formGroupLocation">
+                                <FloatingLabel id="forLocation" label="location" className="me-2">
+                                <FormControl
+                                    type="input"
+                                    className="mt-2"
+                                    value={location}
                                     onChange={
-                                    (e) => setBio(e.target.value)
-                                    }>
-                            </textarea>
-                        </li>
-                        <li className="list-group-item">
-                        <label for="Location" className="me-2"> Location </label>
-                        <input
-                            className="mt-2"
-                            onChange={
-                                 (e) => setLocation(e.target.value)}
-                            value={location} />
-                        </li>
-                        <li className="list-group-item">
-                        <label for="website" className="me-2"> Website </label>
-                        <input
-                            id="website"
-                            className="mt-2"
-                            onChange={
-                                  (e) => setWebsite(e.target.value)
-                                  }
-                            value={website} />
-                        </li>
-                        <li className="list-group-item">
-                            <label for="bday" className="me-2"> Date of Birth </label>
-                            <input
-                            className="mt-2"
-                                onChange={
-                                    (e) => setBDay(e.target.value)
-                                    }
-                                value={bday}
-                                />
-                        </li>
-                       </ul>
-                    </form>
-                    </div>
+                                         (e) => handleLocationChange(e)
+                                         }/>
+                                </FloatingLabel>
+                            </FormGroup>
 
-                )
-                }
+                            <FormGroup controlId="formGroupWebsite">
+                                <FloatingLabel id="forWebsite" label="website" className="me-2">
+                                <FormControl
+                                    type="input"
+                                    className="mt-2"
+                                    value={website}
+                                    onChange={
+                                          (e) => handleWebsiteChange(e)
+                                          }/>
+                                </FloatingLabel>
+                            </FormGroup>
+                        </Form>
+                    </div>
+                    <div className="mt-2 ms-2">
+                       <span className="d-flex flex-row">
+                        <div className="me-2">Birthdate</div>
+                        <a href="#" className="text-primary text-decoration-none">Edit</a>
+                       </span>
+                        <div>{dateOfBirth}</div>
+                    </div>
+                </div>
         </>
     )
 
 }
-export default EditProfile;
+export default EditProfileComponent;
