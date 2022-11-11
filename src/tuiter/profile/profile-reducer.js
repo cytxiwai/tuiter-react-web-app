@@ -6,7 +6,7 @@ const profileSlice = createSlice({   //create the slice
     initialState: profile,  //initialize the reducer's state
     reducers: {
         updateProfile(state, action) {
-            return state = action.payload;
+            state = action.payload;
         }
     }
 });

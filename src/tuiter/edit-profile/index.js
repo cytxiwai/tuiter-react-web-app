@@ -73,9 +73,6 @@ const EditProfileComponent = () => {
         setProfile(newProfile);
     }
 
-
-
-
     return(
         <>
                 <div>
@@ -88,7 +85,7 @@ const EditProfileComponent = () => {
                             onclick={(e) => {
                                 updateProfileHandler(e);
                             }}
-                            className="float-end me-2 mb-1 btn btn-dark text-white btn-outline-none rounded-pill">
+                            className="float-end me-2 mb-1 btn btn-white text-white btn-outline-dark rounded-pill">
                              <Link to="../profile/" className="text-decoration-none">Save</Link>
                         </button>
                     </div>
@@ -152,7 +149,7 @@ const EditProfileComponent = () => {
                     <div className="mt-2 ms-2">
                        <span className="d-flex flex-row">
                         <div className="me-2">Birthdate</div>
-                        <a href="#" className="text-primary text-decoration-none">Edit</a>
+                        <button href="" className="text-primary btn btn-white text-decoration-none p-0 m-0 pb-1">Edit</button>
                        </span>
                         <div>{dateOfBirth}</div>
                     </div>

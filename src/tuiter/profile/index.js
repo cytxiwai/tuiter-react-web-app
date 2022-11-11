@@ -24,7 +24,7 @@ const ProfileComponent = () => {
                     </div>
                     <div>
                         <img src={profile.profilePicture} className="rounded-circle ms-5 position-absolute wd-profileimg" width="140px" alt="" />
-                        <button className="float-end mt-2 me-2 btn btn-white btn-outline-dark rounded-pill">
+                        <button className="float-end mt-2 me-2 btn btn-white text-white btn-outline-primary rounded-pill">
                             <Link to="../edit-profile" className="text-decoration-none text-dark">EditProfile</Link>
                         </button>
                     </div>
