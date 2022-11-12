@@ -3,6 +3,10 @@
   top: 100px;
 }
 
+.wd-img-grey{
+    filter: grayscale(80%)
+}
+
 .wd-updateProfileImg{
     left: 80px;
     top: 140px;

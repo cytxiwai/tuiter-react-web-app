@@ -3,12 +3,13 @@ import profile from "./profile.json";
 
 const profileSlice = createSlice({   //create the slice
     name: "profile",             //name the reducer
-    initialState: profile,  //initialize the reducer's state
+    initialState: profile, //initialize the reducer's state
+
     reducers: {
-        updateProfile(state, action) {
-            state = action.payload;
+        updateProfile: (state, action) => {
+            state[0] = action.payload
         }
-    }
+    },
 });
 
 export const{updateProfile} = profileSlice.actions

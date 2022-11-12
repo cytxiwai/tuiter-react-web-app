@@ -1,10 +1,10 @@
 import {useSelector, useDispatch} from 'react-redux';
-import {FaTimes, FaCamera} from "react-icons/fa"
+import {FaTimes, FaCamera, FaChevronRight} from "react-icons/fa"
 import {useState} from 'react';
 import {Link} from 'react-router-dom'
 import Form from 'react-bootstrap/Form'
 import {FloatingLabel, FormGroup, FormControl} from "react-bootstrap"
-import {updateProfile} from '../profile/profile-reducer.js'
+import {updateProfile} from '../profile/profile-reducer'
 import "../profile/index.css";
 
 
@@ -17,18 +17,21 @@ const EditProfileComponent = () => {
     const [location, setLocation] = useState(profile.location);
     const [website, setWebsite] = useState(profile.website);
     const [dateOfBirth] = useState(profile.dateOfBirth);
+
     const dispatch = useDispatch();
 
+
+
     const updateProfileHandler = (e) => {
-        dispatch(updateProfile(
-            {...profile,
-            fistName: firstName,
+       dispatch(updateProfile(
+           {...profile,
+            firstName: firstName,
             lastName: lastName,
             bio: bio,
             location: location,
             website: website
             }
-        ));
+         ));
     }
 
 
@@ -44,6 +47,7 @@ const EditProfileComponent = () => {
 
     const handleNameChange = (e) => {
         const newName = e.target.value.split(" ")
+        console.log(newName)
         setFirstName(newName[0]);
         setLastName(newName[1]);
         const newProfile = {
@@ -83,7 +87,7 @@ const EditProfileComponent = () => {
                             <Link to="../profile/" className="text-decoration-none text-dark"><FaTimes/></Link></button>
                         <div className="float-start pt-2 mb-0"> Edit profile</div>
                         <button
-                            onclick={(e) => {
+                            onClick={(e) => {
                                 updateProfileHandler(e);
                             }}
                             className="float-end me-2 mb-1 btn btn-white text-white btn-outline-dark rounded-pill">
@@ -91,7 +95,7 @@ const EditProfileComponent = () => {
                         </button>
                     </div>
                     <div className="w-100">
-                        <img src={profile.bannerPicture} className="w-100 position-relatively" height="120px" alt=""/>
+                        <img src={profile.bannerPicture} className="w-100 position-relatively wd-img-grey" height="120px" alt=""/>
                         <div>
                              <button className="btn rounded-circle bg-secondary bg-opacity-75 position-absolute wd-updateBannerImg"><FaCamera/></button>
                         </div>
@@ -100,7 +104,7 @@ const EditProfileComponent = () => {
                         </div>
                     </div>
                     <div>
-                        <img src={profile.profilePicture} className="rounded-circle ms-5 position-absolute wd-profileimg" width="140px" alt=""/>
+                        <img src={profile.profilePicture} className="rounded-circle ms-5 position-absolute wd-profileimg wd-img-grey border-white border border-3" width="140px" alt=""/>
                         <div>
                             <button className="btn rounded-circle bg-secondary bg-opacity-75 position-absolute wd-updateProfileImg"><FaCamera/></button>
                         </div>
@@ -162,6 +166,12 @@ const EditProfileComponent = () => {
                         <button href="" className="text-primary btn btn-white text-decoration-none p-0 m-0 pb-1">Edit</button>
                        </span>
                         <div>{dateOfBirth}</div>
+                    </div>
+                    <div>
+                        <button className="w-100 mt-2 ps-0 btn btn-white">
+                            <div className="float-start">Switch to professional</div>
+                            <FaChevronRight className="mt-1 float-end "/>
+                        </button>
                     </div>
                 </div>
         </>
