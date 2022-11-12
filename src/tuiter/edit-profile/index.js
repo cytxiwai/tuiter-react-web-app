@@ -16,9 +16,11 @@ const EditProfileComponent = () => {
     const [lastName, setLastName] = useState(profile.lastName);
     const [location, setLocation] = useState(profile.location);
     const [website, setWebsite] = useState(profile.website);
-    const [dateOfBirth] = useState(profile.dateOfBirth);
+    const [dateOfBirth, setDateOfBirth] = useState(profile.dateOfBirth);
+    const [editDB, setEditDB] = useState(false);
 
     const dispatch = useDispatch();
+    let newDateOfBirth = new Date().getTime();
 
 
 
@@ -29,7 +31,8 @@ const EditProfileComponent = () => {
             lastName: lastName,
             bio: bio,
             location: location,
-            website: website
+            website: website,
+            dateOfBirth: dateOfBirth
             }
          ));
     }
@@ -78,6 +81,24 @@ const EditProfileComponent = () => {
         setProfile(newProfile);
     }
 
+    const handleDateOfBirthChange = (e) => {
+        const date = new Date(e.target.value);
+        if (! isNaN(date.getTime())){
+            newDateOfBirth = date.getMonth() + 1 + '/' + parseInt(date.getDate()+ 1).toString() + '/' + date.getFullYear();
+        }
+        setDateOfBirth(newDateOfBirth);
+        const newProfile = {
+            ...profile,
+            dateOfBirth: newDateOfBirth
+        }
+        setProfile(newProfile)
+
+    }
+
+
+
+
+
     return(
         <>
                 <div>
@@ -109,7 +130,7 @@ const EditProfileComponent = () => {
                             <button className="btn rounded-circle bg-secondary bg-opacity-75 position-absolute wd-updateProfileImg"><FaCamera/></button>
                         </div>
                     </div>
-                    <div className="mt-5 pt-3">
+                    <div className="mt-5 pt-2">
                         <Form className="mt-2">
 
                             <FormGroup controlId="formGroupName">
@@ -126,8 +147,9 @@ const EditProfileComponent = () => {
                             <FormGroup controlId="formGroupBio">
                                 <FloatingLabel id="forBio" label="bio" className="me-2">
                                 <FormControl
-                                        type="textarea"
+                                        as="textarea"
                                         className="mt-2"
+                                        style={{height: '90px'}}
                                         value={bio}
                                         onChange={
                                         (e) => setBio(handleBioChange(e))
@@ -163,9 +185,20 @@ const EditProfileComponent = () => {
                     <div className="mt-2 ms-2">
                        <span className="d-flex flex-row">
                         <div className="me-2">Birthdate</div>
-                        <button href="" className="text-primary btn btn-white text-decoration-none p-0 m-0 pb-1">Edit</button>
+                        <button
+                            onClick={(e) => {setEditDB(e)}}
+                            className="text-primary btn btn-white text-decoration-none p-0 m-0 pb-1">Edit</button>
                        </span>
+                       {editDB &&
+                           <form>
+                           <input type="date" name="birthday"
+                           onChange={(e) => handleDateOfBirthChange(e)}/>
+
+                           </form>
+                       }
+                       {!editDB &&
                         <div>{dateOfBirth}</div>
+                        }
                     </div>
                     <div>
                         <button className="w-100 mt-2 ps-0 btn btn-white">
