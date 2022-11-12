@@ -1,10 +1,11 @@
 import {useSelector, useDispatch} from 'react-redux';
-import {FaTimes} from "react-icons/fa"
+import {FaTimes, FaCamera} from "react-icons/fa"
 import {useState} from 'react';
 import {Link} from 'react-router-dom'
 import Form from 'react-bootstrap/Form'
 import {FloatingLabel, FormGroup, FormControl} from "react-bootstrap"
 import {updateProfile} from '../profile/profile-reducer.js'
+import "../profile/index.css";
 
 
 const EditProfileComponent = () => {
@@ -90,10 +91,19 @@ const EditProfileComponent = () => {
                         </button>
                     </div>
                     <div className="w-100">
-                        <img src={profile.bannerPicture} className="w-100 position-relatively" height="110px" alt=""/>
+                        <img src={profile.bannerPicture} className="w-100 position-relatively" height="120px" alt=""/>
+                        <div>
+                             <button className="btn rounded-circle bg-secondary bg-opacity-75 position-absolute wd-updateBannerImg"><FaCamera/></button>
+                        </div>
+                        <div>
+                            <button className="btn rounded-circle bg-secondary bg-opacity-75 position-absolute wd-cancelBannerImg"><FaTimes/></button>
+                        </div>
                     </div>
                     <div>
-                        <img src={profile.profilePicture} className="rounded-circle ms-5 position-absolute wd-profileimg" width="140px" alt="" />
+                        <img src={profile.profilePicture} className="rounded-circle ms-5 position-absolute wd-profileimg" width="140px" alt=""/>
+                        <div>
+                            <button className="btn rounded-circle bg-secondary bg-opacity-75 position-absolute wd-updateProfileImg"><FaCamera/></button>
+                        </div>
                     </div>
                     <div className="mt-5 pt-3">
                         <Form className="mt-2">

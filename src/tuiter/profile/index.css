@@ -3,6 +3,23 @@
   top: 100px;
 }
 
+.wd-updateProfileImg{
+    left: 80px;
+    top: 140px;
+}
+
+.wd-updateBannerImg{
+    top: 80px;
+    left: 280px;
+
+}
+
+.wd-cancelBannerImg{
+   top: 80px;
+   left: 330px;
+
+}
+
 .wd-font-currentUser{
    font-size: 15px;
 }

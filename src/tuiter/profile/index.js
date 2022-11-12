@@ -20,7 +20,7 @@ const ProfileComponent = () => {
                         </div>
                     </div>
                     <div className="w-100">
-                        <img src={profile.bannerPicture} className="w-100 position-relatively" height="110px" alt=""/>
+                        <img src={profile.bannerPicture} className="w-100 position-relatively" height="120px" alt=""/>
                     </div>
                     <div>
                         <img src={profile.profilePicture} className="rounded-circle ms-5 position-absolute wd-profileimg" width="140px" alt="" />
@@ -28,7 +28,7 @@ const ProfileComponent = () => {
                             <Link to="../edit-profile" className="text-decoration-none text-dark">EditProfile</Link>
                         </button>
                     </div>
-                    <div className="mt-5 pt-4">
+                    <div className="mt-5 pt-2">
                         <h5 className="m-0 wd-font-currentUser">{profile.firstName} {profile.lastName}</h5>
                         <h6 className="text-secondary fw-bold mb-2 wd-fonthandle">{profile.handle}</h6>
                         <p className="wd-fontBio mb-1">{profile.bio}</p>
