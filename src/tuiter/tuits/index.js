@@ -7,9 +7,10 @@ import {findTuitsThunk} from "../../services/tuits-thunks.js";
 const TuitsList = () => {
 const {tuits, loading} = useSelector((state) => state.tuitsData)
 const dispatch = useDispatch();
-useEffect(() => {
-    dispatch(findTuitsThunk())    //invoke find tuits thunk to fetch tuits and put them in reducer's store
-    })
+  useEffect(() => {
+    dispatch(findTuitsThunk())
+  }, [dispatch])
+
 
     return (
         <ul className="list-group ms-1 position-relatively">

@@ -1,8 +1,9 @@
 import axios from 'axios';   //manage HTTP request on client side
 
 
-const API_BASE = process.env.REACT_APP_API_BASE;
-const TUITS_API = `${API_BASE}/tuits`;
+//const API_BASE = process.env.REACT_APP_API_BASE;
+//const TUITS_API = `${API_BASE}/tuits`;
+const TUITS_API = 'https://tuiter-node-server-app-2.herokuapp.com/api/tuits';
 
 //asynchronous function will run the HTTP requests on multiThreads, not block the main thread
 //async and  await are used at same time
@@ -24,8 +25,8 @@ export const deleteTuit = async (tid) => {
 }
 
 export const updateTuit = async (tuit) => {
-    const response = await axios.put(`${TUITS_API}/${tuit._id}`, tuit);
-  return response.data;
+    //const response = await axios.put(`${TUITS_API}/${tuit._id}`, tuit);
+  return tuit;
 
 
 }
