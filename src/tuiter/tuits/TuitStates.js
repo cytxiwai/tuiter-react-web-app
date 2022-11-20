@@ -1,8 +1,8 @@
-import {FaComment, FaHeart, FaRetweet, FaShare} from 'react-icons/fa';
-import {likeTuit, unlikeTuit} from './tuits-reducer.js';
+import {FaComment, FaHeart, FaRetweet, FaShare, FaThumbsDown} from 'react-icons/fa';
 import React from 'react';
 import {useState} from 'react';
 import {useDispatch} from 'react-redux';
+import {updateTuitThunk} from "../../services/tuits-thunks"
 
 const TuitStates = (
 {
@@ -13,7 +13,7 @@ const TuitStates = (
             "time": "2h",
             "title": "100s of SpaceX Starships land on Mars after a 6 month journey. 1000s of Martian colonists being building Mars Base 1",
             "image": "spacex.png",
-            "liked": true,
+            "liked": false,
             "replies": 123,
             "retuits": 432,
             "likes": 2345,
@@ -29,12 +29,20 @@ const TuitStates = (
      const dispatch = useDispatch();
 
      const likeTuitHandler = (tuit) => {
-           dispatch(likeTuit(tuit))
+           dispatch(updateTuitThunk({
+           ...tuit,
+           likes: tuit.likes + 1,
+           liked: true
+           }))
          }
 
      const unlikeTuitHandler = (tuit) => {
      //alert(action.payload.tuit)
-            dispatch(unlikeTuit(tuit))
+            dispatch(updateTuitThunk({
+            ...tuit,
+            likes: tuit.likes - 1,
+            liked: false
+            }))
          }
 
 
@@ -68,6 +76,28 @@ const TuitStates = (
                          onClick={() => unlikeTuitHandler(tuit)}
                          className="btn btn-white rounded-pill">
                          <FaHeart className="me-1 mb-1 text-danger"/>{tuit.likes}
+                     </button >}
+                </li>
+                <li className="flex-fill">
+                    {!tuit.disliked &&
+                    <button
+                        onClick={() => dispatch(updateTuitThunk({
+                        ...tuit,
+                        dislikes: tuit.dislikes + 1,
+                        disliked: true
+                        }))}
+                        className="btn btn-white rounded-pill">
+                        <FaThumbsDown className="me-1 mb-1"/>{tuit.dislikes}
+                    </button >}
+                     {tuit.disliked &&
+                     <button
+                         onClick={() => dispatch(updateTuitThunk({
+                         ...tuit,
+                         dislikes: tuit.dislikes -1,
+                         disliked: false
+                         }))}
+                         className="btn btn-white rounded-pill">
+                         <FaThumbsDown className="me-1 mb-1 text-primary"/>{tuit.dislikes}
                      </button >}
                 </li>
                 <li className="flex-fill">

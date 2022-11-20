@@ -10,9 +10,16 @@ import {configureStore} from "@reduxjs/toolkit";
 import {Provider} from "react-redux";
 import NewHomeComponent from "./home/newHomeComponent.js";
 import ProfileComponent from "./profile/index.js";
-import EditProfileComponent from "./edit-profile/index.js"
+import EditProfileComponent from "./edit-profile/index.js";
 
-const store = configureStore({reducer: {who: whoReducer, tuits: tuitsReducer, profile: profileReducer}});
+
+
+const store = configureStore({reducer: {
+                                    who: whoReducer,
+                                    tuitsData: tuitsReducer,
+                                    profile: profileReducer,
+                                    }
+                               });
 
 function Tuiter() {
  return (

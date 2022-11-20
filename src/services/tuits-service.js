@@ -1,0 +1,29 @@
+import axios from 'axios';   //manage HTTP request on client side
+
+const TUITS_API = "http://localhost:4000/api/tuits"
+
+//asynchronous function will run the HTTP requests on multiThreads, not block the main thread
+//async and  await are used at same time
+export const findTuits = async () => {
+        const response = await axios.get(TUITS_API);  // send GET HTTP request to server
+        const tuits = response.data;
+        return tuits;
+}
+
+export const createTuit = async (tuit) => {
+    const response = await axios.post(TUITS_API, tuit)
+    return response.data;
+}
+
+
+export const deleteTuit = async (tid) => {
+    const response = await axios.delete(`$(TUITS_API)/${tid}`)
+    return response.data
+}
+
+export const updateTuit = async (tuit) => {
+    const response = await axios.put(`${TUITS_API}/${tuit._id}`, tuit);
+  return tuit;
+
+
+}
