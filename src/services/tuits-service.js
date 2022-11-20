@@ -1,6 +1,8 @@
 import axios from 'axios';   //manage HTTP request on client side
 
-const TUITS_API = "http://localhost:4000/api/tuits"
+
+const API_BASE = process.env.REACT_APP_API_BASE;
+const TUITS_API = `${API_BASE}/tuits`;
 
 //asynchronous function will run the HTTP requests on multiThreads, not block the main thread
 //async and  await are used at same time
