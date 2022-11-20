@@ -9,7 +9,7 @@ const {tuits, loading} = useSelector((state) => state.tuitsData)
 const dispatch = useDispatch();
 useEffect(() => {
     dispatch(findTuitsThunk())    //invoke find tuits thunk to fetch tuits and put them in reducer's store
-    }, [])
+    })
 
     return (
         <ul className="list-group ms-1 position-relatively">
