@@ -10,7 +10,9 @@ const WhatsHappening = () => {
  const tuitClickHandler = () => {
     const newTuit = {
       tuit: whatsHappening,
-      _id: "Teena C",
+      topic: "self-post",
+      title: whatsHappening,
+      username: "Teena C",
       handle:"@teenac",
       likes: 0,
       dislikes: 0,
