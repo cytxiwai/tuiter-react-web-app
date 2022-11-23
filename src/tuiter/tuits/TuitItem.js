@@ -6,7 +6,7 @@ import {deleteTuitThunk} from "../../services/tuits-thunks.js";
 const TuitItem = (
     {
         tuit = {
-            "_id": 234,
+            "_id": "234",
             "topic": "Space",
             "userName": "SpaceX",
             "time": "2h",
@@ -26,6 +26,9 @@ const TuitItem = (
 ) => {
 
         const dispatch = useDispatch();
+        const deleteTuitHandler = (id) => {
+            dispatch(deleteTuitThunk(id))
+        }
     return (
                             <>
                               <div className="d-flex float-start me-2 mt-3">
@@ -35,7 +38,9 @@ const TuitItem = (
                                   <div className="d-flex flex-row">
                                   <div className="fw-bold">{tuit.userName} <span className="fw-normal text-secondary">{tuit.handle} • {tuit.time}</span></div>
                                   <i className="bi bi-x-lg d-flex flex-fill justify-content-end"
-                                       onClick={() => dispatch(deleteTuitThunk(tuit._id))}></i>
+
+                                       onClick={() => deleteTuitHandler(tuit._id)}></i>
+
                                   </div>
                                   <div>{tuit.tuit} </div>
                               </div>
