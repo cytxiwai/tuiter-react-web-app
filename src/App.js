@@ -7,7 +7,6 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 
 
 
-
 //a library can catch the URL and react on the URL (grab the variable from url use Routes)
 import {BrowserRouter} from "react-router-dom";
 import {Routes} from "react-router";
