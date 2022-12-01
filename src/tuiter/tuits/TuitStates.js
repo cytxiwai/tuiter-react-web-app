@@ -1,5 +1,6 @@
 import {FaComment, FaHeart, FaRetweet, FaShare, FaThumbsDown} from 'react-icons/fa';
 import React from 'react';
+import {likeTuit, unlikeTuit} from './tuits-reducer.js';
 import {useState} from 'react';
 import {useDispatch} from 'react-redux';
 import {updateTuitThunk} from "../../services/tuits-thunks"
@@ -26,6 +27,7 @@ const TuitStates = (
 
      const [reply, setReply] = useState(tuit.replies);
      const [retuits, setRetuits] = useState(tuit.retuits);
+
      const dispatch = useDispatch();
 
      const likeTuitHandler = (tuit) => {
@@ -33,7 +35,8 @@ const TuitStates = (
            ...tuit,
            likes: tuit.likes + 1,
            liked: true
-           }))
+           }),
+           likeTuit(tuit))
          }
 
      const unlikeTuitHandler = (tuit) => {
@@ -42,7 +45,8 @@ const TuitStates = (
             ...tuit,
             likes: tuit.likes - 1,
             liked: false
-            }))
+            }),
+             unlikeTuit(tuit))
          }
 
 
@@ -67,13 +71,16 @@ const TuitStates = (
                 <li className="flex-fill">
                    {!tuit.liked &&
                     <button
-                        onClick={() => likeTuitHandler(tuit)}
+                        onClick={() =>
+                            likeTuitHandler(tuit)}
                         className="btn btn-white rounded-pill">
                         <FaHeart className="me-1 mb-1"/>{tuit.likes}
                     </button >}
                      {tuit.liked &&
                      <button
-                         onClick={() => unlikeTuitHandler(tuit)}
+                         onClick={() =>
+                             unlikeTuitHandler(tuit)
+                             }
                          className="btn btn-white rounded-pill">
                          <FaHeart className="me-1 mb-1 text-danger"/>{tuit.likes}
                      </button >}
